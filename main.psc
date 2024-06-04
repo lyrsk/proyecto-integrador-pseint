@@ -1,4 +1,4 @@
-Proceso sin_titulo
+Proceso main
     Definir opc Como Entero;
     opc <- 0;
     Mientras opc <> 1 Y opc <> 2 Y opc <> 3 Hacer
