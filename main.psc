@@ -138,7 +138,110 @@ Proceso main
 				FinSi
 			FinMientras
 		2:
-			Escribir "Acá estaría el ta te ti";
+			Definir x, jugador, n Como Entero; // Agregué la variable 'n'
+			Definir vector Como Caracter;
+			Dimension vector[9];
+			
+			Para x <- 0 Hasta 8 Con Paso 1 Hacer
+				vector[x] <- " "; 
+			FinPara
+			
+			x <- 1;
+			jugador <- azar(2) + 1;
+			
+			Mientras x <= 8 Hacer
+				Escribir "Ingresa una posición jugador", jugador;
+				Escribir "0,1,2","         ", vector[0],",",vector[1],",",vector[2]; 
+				Escribir "3,4,5","         ", vector[3],",",vector[4],",",vector[5]; 
+				Escribir "6,7,8","         ", vector[6],",",vector[7],",",vector[8]; 
+				Leer n;
+				Si n < 10 Entonces 
+					Si jugador == 1 Entonces
+						Si vector(n) == " " Entonces 
+							vector(n) <- "X";
+							jugador <- 2;
+							si vector(0) == "X" y vector(1) == "X" y vector(2) == "X" Entonces
+								escribir "El jugador 1 ha ganado";
+								x <- 8;
+							FinSi
+							si vector(3) == "X" y vector(4) == "X" y vector(5) == "X" Entonces
+								Escribir "El jugador 1 ha ganado";
+								x <- 8;
+							FinSi
+							si vector(6) == "X" y vector(7) == "X" y vector(8) == "X" Entonces
+								escribir "El jugador 1 ha ganado";
+								x <- 8;
+							FinSi
+							si vector(0) == "X" y vector(3) == "X" y vector(6)== "X"Entonces
+								escribir "El jugador 1 ha ganado";
+								x <- 8;
+							FinSi
+							si vector(1) == "X" y vector(4) == "X" y vector(7)== "X" Entonces
+								escribir "El jugador 1 ha ganado";
+								x <- 8;
+							FinSi
+							si vector(2) == "X" y vector(5) == "X" y vector(8)== "X" Entonces
+								escribir "El jugador 1 ha ganado";
+								x <- 8;
+							FinSi
+							si vector(0) == "X" y vector(4) == "X" y vector(8)== "X" Entonces
+								escribir "El jugador 1 ha ganado";
+								x <- 8;
+							FinSi
+							si vector(2) == "X" y vector(4) == "X" y vector(6)== "X" Entonces
+								escribir "El jugador 1 ha ganado";
+								x <- 8;
+							FinSi
+						FinSi
+					SiNo
+						Si vector(n) == " " Entonces 
+							vector(n) <- "O";
+							jugador <- 1;
+							si vector(0) == "O" y vector(1) == "O" y vector(2) == "O" Entonces
+								escribir "El jugador 2 ha ganado";
+								x <- 8;
+							FinSi
+							si vector(3) == "O" y vector(4) == "O" y vector(5) == "O" Entonces
+								Escribir "El jugador 2 ha ganado";
+								x <- 8;
+							FinSi
+							si vector(6) == "O" y vector(7) == "O" y vector(8) == "O" Entonces
+								escribir "El jugador 2 ha ganado";
+								x <- 8;
+							FinSi
+							si vector(0) == "O" y vector(3) == "O" y vector(6)== "O"Entonces
+								escribir "El jugador 2 ha ganado";
+								x <- 8;
+							FinSi
+							si vector(1) == "O" y vector(4) == "O" y vector(7)== "O" Entonces
+								escribir "El jugador 2 ha ganado";
+								x <- 8;
+							FinSi
+							si vector(2) == "O" y vector(5) == "O" y vector(8)== "O" Entonces
+								escribir "El jugador 2 ha ganado";
+								x <- 8;
+							FinSi
+							si vector(0) == "O" y vector(4) == "O" y vector(8)== "O" Entonces
+								escribir "El jugador 2 ha ganado";
+								x <- 8;
+							FinSi
+							si vector(2) == "O" y vector(4) == "O" y vector(6)== "O" Entonces
+								escribir "El jugador 2 ha ganado";
+								x <- 8;
+							FinSi
+						SiNo
+							Escribir "Esa posición está ocupada";
+						FinSi
+					FinSi
+				SiNo
+					Escribir "Posición incorrecta";
+				FinSi
+				
+				x <- x + 1;
+			FinMientras
+			Escribir "0,1,2","         ", vector[0],",",vector[1],",",vector[2]; 
+			Escribir "3,4,5","         ", vector[3],",",vector[4],",",vector[5]; 
+			Escribir "6,7,8","         ", vector[6],",",vector[7],",",vector[8]; 
 		3:
 			Escribir "Adios";
 	FinSegun
